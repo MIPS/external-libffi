@@ -18,6 +18,9 @@ LOCAL_C_INCLUDES := \
 LOCAL_SRC_FILES := src/debug.c src/prep_cif.c src/types.c \
         src/raw_api.c src/java_raw_api.c
 
+ifeq ($(TARGET_OS)-$(TARGET_ARCH),linux-mips)
+  LOCAL_SRC_FILES += src/mips/o32.S src/mips/ffi.c
+endif
 ifeq ($(TARGET_OS)-$(TARGET_ARCH),linux-arm)
   LOCAL_SRC_FILES += src/arm/sysv.S src/arm/ffi.c
 endif

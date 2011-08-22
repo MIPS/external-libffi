@@ -41,6 +41,7 @@
 #define FP_OFF		(SIZEOF_FRAME - 2 * FFI_SIZEOF_ARG)
 #define RA_OFF		(SIZEOF_FRAME - 1 * FFI_SIZEOF_ARG)
 
+	.set nomips16
 	.abicalls
 	.text
 	.align	2
